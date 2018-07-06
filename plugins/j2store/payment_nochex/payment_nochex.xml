@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension version="2.5" type="plugin" group="j2store" method="upgrade">
+
+	<name>Nochex</name>
+
+	<version>1</version>
+
+	<creationDate>May 2016</creationDate>
+
+	<author>Nochex</author>
+
+	<license>GNU General Public License v2 or later</license>
+
+	<description>J2STORE_NOCHEX_PLUGINDESC</description>
+
+	<files>
+
+		<filename plugin="payment_nochex">payment_nochex.php</filename>
+
+		<folder>payment_nochex</folder>
+
+	</files>
+
+	<languages>
+
+        <language tag="en-GB">languages/en-GB.plg_j2store_payment_nochex.ini</language>        
+
+    </languages>
+
+	<config>
+
+	<fields name="params">
+
+		<fieldset name="basic">
+
+		<field name="display_name" type="text" size="30" default="" label="j2store_plugin_display_name" description="j2store_plugin_display_name_desc"/>
+
+		<field name="display_image" type="media" label="j2store_plugin_display_image" description="j2store_plugin_display_image_desc"/>
+
+     	<field name="merchant_id" type="text" size="50" default="" label="j2store_nochex_merchantid" description="j2store_nochex_merchantid_desc"/>	
+
+		<field type="spacer" />
+
+	    <field name="sandbox" type="radio" default="0" label="j2store_nochex_test_server" description="j2store_nochex_test_server_desc">
+
+          <option value="0">J2STORE_NO</option>
+
+          <option value="1">J2STORE_YES</option>
+
+        </field>
+		
+		<field type="spacer" />
+
+	    <field name="xmlcollection" type="radio" default="0" label="j2store_nochex_xmlcollection" description="j2store_nochex_xmlcollection_desc">
+
+          <option value="0">J2STORE_NO</option>
+
+          <option value="1">J2STORE_YES</option>
+
+        </field>
+		
+		<field type="spacer" />
+
+
+                <field name="button_text" type="text" size="50" default="Pay by Credit/Debit Card" label="j2store_button_text_label" description="j2store_button_text_desc" />            
+
+        
+
+            <field type="spacer" />
+
+           
+
+           <field name="debug" type="radio" default="0" label="j2store_debug" description="j2store_debug_desc">
+
+              <option value="0">No</option>
+
+              <option value="1">Yes</option>
+
+            </field>    
+
+		
+
+		</fieldset>
+
+	</fields>
+
+</config>				
+
+</extension>
