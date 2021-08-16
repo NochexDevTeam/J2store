@@ -182,7 +182,7 @@ $your_email = $_POST["from_email"];  // your merchant account email address
 // uncomment below to force a DECLINED response 
 //$_POST['order_id'] = "1"; 
 
-$url = "https://www.nochex.com/nochex.dll/apc/apc";
+$url = "https://www.nochex.com/apcnet/apc.aspx";
 $postvars = http_build_query($_POST);
 
 $ch = curl_init ();
@@ -192,13 +192,11 @@ curl_setopt ($ch, CURLOPT_POSTFIELDS, $postvars);
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt ($ch, CURLOPT_TIMEOUT, 60);
 //curl_setopt ($ch, CURLOPT_SSLVERSION, 0);
-curl_setopt ($ch, CURLOPT_SSLVERSION, 6);
 curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
 $response = curl_exec ($ch);
 curl_close ($ch);
 
-//$response = http_post("www.nochex.com", 80, "/nochex.dll/apc/apc", $_POST); 
 // stores the response from the Nochex server 
 $debug = "IP -> " . $_SERVER['REMOTE_ADDR'] ."\r\n\r\nPOST DATA:\r\n"; 
 foreach($_POST as $Index => $Value) 
@@ -215,7 +213,7 @@ $debug .= "\r\nRESPONSE:\r\n$response";
 	$order->transaction_id = $_POST["transaction_id"];
 	$order->transaction_status = $response;
 					
-if (!strstr($response, "AUTHORISED")) {  // searches response to see if AUTHORISED is present if it isn’t a failure message is displayed
+if (!strstr($response, "AUTHORISED")) {  // searches response to see if AUTHORISED is present if it isnÂ’t a failure message is displayed
     $msg = "APC was not AUTHORISED.\r\n\r\n$debug";  // displays debug message	
 	
 	$order->transaction_details = $msg . ", and this was a " . $_POST["status"] . " transaction";
