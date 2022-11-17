@@ -1,5 +1,6 @@
 Nochex Module for J2store 
 ============
+Tested up to J2store version 3.3.20
 
 Installation
 ============
