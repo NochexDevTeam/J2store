@@ -182,7 +182,7 @@ $your_email = $_POST["from_email"];  // your merchant account email address
 // uncomment below to force a DECLINED response 
 //$_POST['order_id'] = "1"; 
 
-$url = "https://www.nochex.com/apcnet/apc.aspx";
+$url = "https://secure.nochex.com/apc/apc.aspx";
 $postvars = http_build_query($_POST);
 
 $ch = curl_init ();
